@@ -1,0 +1,22 @@
+[
+  {
+    "question": "A flaw in a component or system that can cause the component or system to fail to perform its required function.",
+    "answer": "Defect / Bug / Fault"
+  },
+  {
+    "question": "A human action that produces an incorrect result.",
+    "answer": "Error / Mistake"
+  },
+  {
+    "question": "Deviation of the component or system from its expected delivery, service or result.",
+    "answer": "Failure"
+  },
+  {
+    "question": "The degree to which a component, system or process meets specified requirements and/or user/customer needs and expectations.",
+    "answer": "Quality"
+  },
+  {
+    "question": "A factor that could result in future negative consequences; usually expressed as impact and likelihood.",
+    "answer": "Risk"
+  }
+]
