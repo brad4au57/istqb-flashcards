@@ -1,22 +1,152 @@
 [
   {
+    "id": 1,
     "question": "A flaw in a component or system that can cause the component or system to fail to perform its required function.",
     "answer": "Defect / Bug / Fault"
   },
   {
+    "id": 2,
     "question": "A human action that produces an incorrect result.",
     "answer": "Error / Mistake"
   },
   {
+    "id": 3,
     "question": "Deviation of the component or system from its expected delivery, service or result.",
     "answer": "Failure"
   },
   {
+    "id": 4,
     "question": "The degree to which a component, system or process meets specified requirements and/or user/customer needs and expectations.",
     "answer": "Quality"
   },
   {
+    "id": 5,
     "question": "A factor that could result in future negative consequences; usually expressed as impact and likelihood.",
     "answer": "Risk"
+  },
+  {
+    "id": 6,
+    "question": "The process of finding, analyzing and removing the causes of failures in software.",
+    "answer": "Debugging"
+  },
+  {
+    "id": 7,
+    "question": "A condition or capability needed by a user to solve a problem or achieve an objective that must be met or possessed by a system or system component to satisfy a contract, standard, specification, or other formally imposed document.",
+    "answer": "Requirement"
+  },
+  {
+    "id": 8,
+    "question": "An evaluation of a product or project status to ascertain discrepancies from planned results and to recommend improvements. Examples include management review, informal review, technical review, inspection, and walkthrough.",
+    "answer": "Review"
+  },
+  {
+    "id": 9,
+    "question": "A set of input values, execution preconditions, expected results and execution postconditions, developed for a particular objective or test condition, such as to exercise a particular program path or to verify compliance with a specific requirement.",
+    "answer": "Test Case"
+  },
+  {
+    "id": 10,
+    "question": "The process consisting of all lifecycle activities, both static and dynamic, concerned with planning, preparation and evaluation of software products and related work products to determine that they satisfy specified requirements, to demonstrate that they are fit for purpose and to detect defects.",
+    "answer": "Testing"
+  },
+  {
+    "id": 11,
+    "question": "A reason or purpose for designing and executing a test.",
+    "answer": "Test Objective"
+  },
+  {
+    "id": 12,
+    "question": "A test approach in which the test suite comprises all combinations of input values and preconditions.",
+    "answer": "Exhaustive Testing"
+  },
+  {
+    "id": 13,
+    "question": "Testing that runs test cases that failed the last time they were run, in order to verify the success of corrective actions.",
+    "answer": "Confirmation Testing / Re-testing"
+  },
+  {
+    "id": 14,
+    "question": "The set of generic and specific conditions, agreed upon with the stakeholders for permitting a process to be officially completed. The purpose of exit criteria is to prevent a task from being considered completed when there are still outstanding parts of the task which have not been finished. Exit criteria are used to report against and to plan when to stop testing.",
+    "answer": "Exit Criteria"
+  },
+  {
+    "id": 15,
+    "question": "Any event occurring that requires investigation.",
+    "answer": "Incident"
+  },
+  {
+    "id": 16,
+    "question": "Testing of a previously tested program following modification to ensure that defects have not been introduced or uncovered in unchanged areas of the software, as a result of the changes made. It is performed when the software or its environment is changed.",
+    "answer": "Regression Testing"
+  },
+  {
+    "id": 17,
+    "question": "All documents from which the requirements of a component or system can be inferred. The documentation on which the test cases are based. If a document can be amended only by way of formal amendment procedure, then the test basis is called a frozen test basis.",
+    "answer": "Test Basis"
+  },
+  {
+    "id": 18,
+    "question": "An item or event of a component or system that could be verified by one or more test cases, e.g. a function, transaction, feature, quality attribute, or structural element.",
+    "answer": "Test Condition"
+  },
+  {
+    "id": 19,
+    "question": "The degree, expressed as a percentage, to which a specified coverage item has been exercised by a test suite.",
+    "answer": "Test Coverage / Coverage"
+  },
+  {
+    "id": 20,
+    "question": "Data that exists (for example, in a database) before a test is executed, and that affects or is affected by the component or system under test.",
+    "answer": "Test Data"
+  },
+  {
+    "id": 21,
+    "question": "The process of running a test on the component or system under test, producing actual result(s).",
+    "answer": "Test Execution"
+  },
+  {
+    "id": 22,
+    "question": "A chronological record of relevant details about the execution of tests.",
+    "answer": "Test Log"
+  },
+  {
+    "id": 23,
+    "question": "A document describing the scope, approach, resources and schedule of intended test activities. It identifies amongst others test items, the features to be tested, the testing tasks, who will do each task, degree of tester independence, the test environment, the test design techniques and entry and exit criteria to be used, and the rationale for their choice, and any risks requiring contingency planning. It is a record of the test planning process.",
+    "answer": "Test Plan"
+  },
+  {
+    "id": 24,
+    "question": "A document specifying a sequence of actions for the execution of a test. Also known as test script or manual test script.",
+    "answer": "Test Procedure / Test Procedure Specification"
+  },
+  {
+    "id": 25,
+    "question": "A high level document describing the principles, approach and major objectives of the organization regarding testing.",
+    "answer": "Test Policy"
+  },
+  {
+    "id": 26,
+    "question": "A set of several test cases for a component or system under test, where the post condition of one test is often used as the precondition for the next one.",
+    "answer": "Test Suite"
+  },
+  {
+    "id": 27,
+    "question": "A document summarizing testing activities and results. It also contains an evaluation of the corresponding test items against exit criteria.",
+    "answer": "Test Summary Report"
+  },
+  {
+    "id": 28,
+    "question": "Artifacts produced during the test process required to plan, design, and execute tests, such as documentation, scripts, inputs, expected results, set-up and clear-up procedures, files, databases, environment, and any additional software or utilities used in testing.",
+    "answer": "Testware"
+  },
+  {
+    "id": 29,
+    "question": "A test design technique where the experience of the tester is used to anticipate what defects might be present in the component or system under test as a result of errors made, and to design tests specifically to expose them.",
+    "answer": "Error Guessing"
+  },
+  {
+    "id": 30,
+    "question": "Separation of responsibilities, which encourages the accomplishment of objective testing.",
+    "answer": "Independence of Testing"
   }
 ]

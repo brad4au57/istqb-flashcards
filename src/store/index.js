@@ -4,16 +4,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    unansweredQuestions: [],
-    answeredQuestions: [],
-    currentQuestion: {
-      question: "If you see this, the cards are not working properly",
-      answer: "Try Reloading"
-    },
-    cardFlipped: false,
-    windowWidth: window.innerWidth
-  },
+  state: getDefaultState(),
   getters: {
     questionsLeft(state) {
       return state.unansweredQuestions.length;
@@ -28,9 +19,6 @@ export default new Vuex.Store({
   mutations: {
     setUnanswered(state, questions) {
       state.unansweredQuestions = questions;
-    },
-    pushUnanswered(state, question) {
-      state.unansweredQuestions.push(question);
     },
     pushAnswered(state, question) {
       state.unansweredQuestions = state.unansweredQuestions.filter(
@@ -47,6 +35,9 @@ export default new Vuex.Store({
     },
     setWindowWidth(state) {
       state.windowWidth = window.innerWidth;
+    },
+    resetState(state) {
+      Object.assign(state, getDefaultState());
     }
   },
   actions: {
@@ -54,26 +45,48 @@ export default new Vuex.Store({
       context.commit("setCurrentQuestion", randomQuestion(context));
     },
     correctAnswer(context) {
+      context.state.cardFlipped = false;
       const question = context.state.currentQuestion;
       context.commit("pushAnswered", question);
-      context.commit("setCurrentQuestion", randomQuestion(context));
+      setTimeout(
+        () => context.commit("setCurrentQuestion", randomQuestion(context)),
+        400
+      );
     },
     wrongAnswer(context) {
-      const question = context.state.currentQuestion;
-      context.commit("pushUnanswered", question);
-      context.commit("setCurrentQuestion", randomQuestion(context));
+      context.state.cardFlipped = false;
+      setTimeout(
+        () => context.commit("setCurrentQuestion", randomQuestion(context)),
+        400
+      );
+    },
+    resetCardState(context) {
+      context.commit("resetState");
     }
   }
 });
 
 function randomQuestion(context) {
-  const numQuestions = context.state.unansweredQuestions.length;
+  let numQuestions = context.state.unansweredQuestions.length;
 
   if (numQuestions > 0) {
     const randomIndex = Math.floor(numQuestions * Math.random());
     return context.state.unansweredQuestions[randomIndex];
   } else {
-    // Possibly insert logic here for no questions left
-    return null;
+    numQuestions = 0;
+    return numQuestions;
   }
+}
+function getDefaultState() {
+  return {
+    unansweredQuestions: [],
+    answeredQuestions: [],
+    currentQuestion: {
+      question: "If you see this, the cards are not working properly",
+      answer: "Try Reloading"
+    },
+    cardFlipped: false,
+    windowWidth: window.innerWidth,
+    cardHeight: 0
+  };
 }
