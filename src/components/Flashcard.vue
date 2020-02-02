@@ -1,15 +1,14 @@
 <template>
   <div ref="flashcard" class="flashcard-scene" @click="flipCard">
-    <div class="card" v-bind:class="{isFlipped: isToggled}">
+    <div class="card" v-bind:class="{isFlipped: isToggled}" v-bind:style="cardHeightStyle">
       <div class="card-face card-face__front">
         <div class="card-content center">
-          <p>{{ front }}</p>
+          <p ref="front">{{ front }}</p>
         </div>
       </div>
-
       <div class="card-face card-face__back">
         <div class="card-content center">
-          <p>{{ back }}</p>
+          <p id="back">{{ back }}</p>
         </div>
       </div>
     </div>
@@ -17,7 +16,13 @@
 </template>
 
 <script>
+// import setTimeout from "timers";
 export default {
+  data() {
+    return {
+      cardHeightStyle: {}
+    };
+  },
   props: {
     front: {
       type: String,
@@ -39,7 +44,14 @@ export default {
   methods: {
     flipCard() {
       this.$store.commit("flipCard");
+    },
+    setContentHeight() {
+      let contentHeight = this.$refs.front.scrollHeight + "px";
+      this.$set(this.cardHeightStyle, "height", contentHeight);
     }
+  },
+  updated() {
+    this.setContentHeight();
   }
 };
 </script>
@@ -54,11 +66,10 @@ export default {
   margin: 5vh auto 3vh;
 }
 .card {
+  position: relative;
   background-color: #FFF;
   min-height: 240px;
   width: 100%;
-  height: 100%;
-  position: relative;
   transition: transform 1s;
   transform-style: preserve-3d;
   font-size: 1.5em;
@@ -66,49 +77,31 @@ export default {
   cursor: pointer;
   box-shadow: 0 20px 20px rgba(50, 50, 50, 0.2);
 }
-
 .card-face {
   position: absolute;
   height: 100%;
   width: 100%;
   backface-visibility: hidden;
 }
-
-.card-face__front {
-}
-
 .card-face__back {
   background-color: #333;
   color: #fff;
   transform: rotateY(180deg);
 }
-
 .isFlipped {
   transform: rotateY(180deg);
 }
-
 .card-content p {
-  padding: 2vw;
+  padding: 5vw;
+  height: 100%;
+  margin: 0;
 }
-
-/* Small devices (landscape phones, 576px and up) */
+/* Small devices and Up (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .flashcard-scene {
     max-width: 600px;
     min-height: 30vh;
-    margin: 5vh auto 0;
+    margin: 5vh auto 3vh;
   }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
 }
 </style>
