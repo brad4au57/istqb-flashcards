@@ -62,7 +62,8 @@ export default {
 .flashcard-scene {
   width: 80vw;
   min-height: 10vh;
-  perspective: 1000px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
   margin: 5vh auto 3vh;
 }
 .card {
@@ -70,26 +71,35 @@ export default {
   background-color: #FFF;
   min-height: 240px;
   width: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
   transition: transform 1s;
-  transform-style: preserve-3d;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   font-size: 1.5em;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
-  box-shadow: 0 20px 20px rgba(50, 50, 50, 0.2);
+  -webkit-box-shadow: 0 20px 20px rgba(50, 50, 50, 0.2);
+          box-shadow: 0 20px 20px rgba(50, 50, 50, 0.2);
 }
 .card-face {
   position: absolute;
   height: 100%;
   width: 100%;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 .card-face__back {
   background-color: #333;
   color: #fff;
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 .isFlipped {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 .card-content p {
   padding: 5vw;

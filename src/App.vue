@@ -67,6 +67,7 @@ html,
 body {
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   background-color: #e8e8e8;
 }
